@@ -1,0 +1,51 @@
+
+
+import java.util.Scanner;
+
+public class RightTriangle {
+    
+    public static void main(String args[])
+    {
+        Scanner input = new Scanner (System.in);
+        int number;
+
+        //we want to ask the user to enter an integer everytime they enter a number smaller than 1 or greater than 50
+        do {
+          System.out.println("Enter an integer between 1 to 50: ");
+          number = input.nextInt();
+          if (number < 1 || number > 50) {
+            System.out.println(number + " is not between 1 to 50"); // tell the user they input a number out of our accepted range
+          }
+        } while (number < 1 || number > 50); // if the number is between 1 and 50 we break out of the while and continue with our program
+
+        //Creating the top part of our pyramid
+        for (int i=0; i<number; i++)
+        {
+            for (int j=0; j<=i; j++)
+            {
+                System.out.print("*"); 
+            }
+            System.out.println("");
+        }
+
+        //Creating the bottom part of our pyramid
+        for (int i=0; i<number-1; i++)
+        {
+            for (int j=number-1; j>i; j--)
+            {
+                System.out.print("*");
+            }
+            System.out.println("");
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
